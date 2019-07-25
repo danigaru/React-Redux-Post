@@ -1,25 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+// importando el routing
+import Routes from './routes'
+
+// importando provider  
+import { Provider } from 'react-redux'
+
+// importando el store
+import store from './store'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    // haciendo que el store esté disponible para todos los componentes.
+    <Provider store={store}>
+
+      {/* // agregando el routing */}
+      
+        <Routes />
+    </Provider>
   );
 }
 
